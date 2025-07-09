@@ -1,0 +1,17 @@
+{
+  "name": "grepsr",
+  "version": "1.0.0",
+  "description": "Automatin Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roshan Pokhrel",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.5.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
