@@ -1,0 +1,35 @@
+name: Daily Cypress Run (Parallel)
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # Runs daily at 2:00 AM UTC
+  workflow_dispatch:     # Allow manual trigger
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        container: [1, 2,3] # Add more if you want 3 or 4 parallel containers
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests in parallel
+        run: |
+          npx cypress run --record \
+            --parallel \
+            --group "Daily Parallel Run" \
+            --ci-build-id ${{ github.run_id }} \
+            --key ${{ secrets.CYPRESS_RECORD_KEY }}
