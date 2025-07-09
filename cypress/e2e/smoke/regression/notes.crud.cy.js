@@ -62,27 +62,22 @@ describe('Regression - Signup and Login Flow', () => {
     cy.wait(15000);
     // cy.get('[data-testid="note-card-title"]') .wait(15000).should('be.visible');
 
-    cy.get('[data-testid="toggle-note-switch"]').click();
+    cy.wait(15000).get('[data-testid="toggle-note-switch"]').click();
 
-    cy.wait(15000);
 
-    cy.get('[data-testid="progress-info"]')
+    cy.wait(15000).get('[data-testid="progress-info"]')
       .should('have.text', 'You have 0/1 notes completed in the all categories');
 
       notesPage.clickViewButton();
 
     notesPage.verifyNoteDetailUrl();
 
-     cy.wait(10000);
     notesPage.clickEditButton();
     notesPage.updateCategory('Work'); //  another valid category
     notesPage.checkCompleteCheckbox();
     notesPage.clickSaveNote();
-    cy.wait(15000); 
     notesPage.clickDeleteButton();
-   cy.wait(15000); 
     notesPage.confirmDeleteInModal();
-   cy.wait(15000); 
 
 // Verify the note is no longer visible
 notesPage.verifyNoteDeleted(noteTitle);

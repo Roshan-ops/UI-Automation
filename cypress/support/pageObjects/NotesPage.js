@@ -1,6 +1,6 @@
 class NotesPage {
   clickAddNoteButton() {
-    cy.get('[data-testid="add-new-note"]').click();
+    cy.wait(15000).get('[data-testid="add-new-note"]').click();
   }
 
   selectCategory(category) {
@@ -42,7 +42,7 @@ class NotesPage {
     cy.get('[data-testid="progress-info"]').should('have.text', expectedText);
   }
   clickViewButton() {
-  cy.get('[data-testid="note-view"]').first().click();
+  cy.wait(15000).get('[data-testid="note-view"]').first().click();
 }
 
 // Verify that URL contains the note ID
@@ -51,7 +51,7 @@ verifyNoteDetailUrl() {
 }
 
 clickEditButton() {
-  cy.get('[data-testid="note-edit"]').click();
+  cy.wait(15000).get('[data-testid="note-edit"]').click();
 }
 
 // Update category from dropdown
@@ -69,25 +69,25 @@ checkCompleteCheckbox() {
 
 // Click the Save button
 clickSaveNote() {
-  cy.get('[data-testid="note-submit"]').click(); 
+  cy.wait(15000).get('[data-testid="note-submit"]').click(); 
 }
 clickDeleteButton() {
-  cy.get('[data-testid="note-delete"]').click({ force: true }). wait(10000); 
+  cy.wait(25000).get('[data-testid="note-delete"]').click({ force: true }). wait(10000); 
 }
 
 // Confirm deletion in the modal
 confirmDeleteInModal() {
   // cy.contains('.modal-title', 'Delete note?').should('be.visible');
-  cy.get('[data-testid="note-delete-confirm"]').click();
+  cy.wait(20000).get('[data-testid="note-delete-confirm"]').click();
 }
 
 // Optionally verify the note was deleted
 verifyNoteDeleted(title) {
-  cy.contains(title).should('not.exist');
+  cy.wait(20000).contains(title).should('not.exist');
 
 }
   verifyNoNotesMessageVisible() {
-  cy.get('[data-testid="no-notes-message"]').should('be.visible');
+  cy.wait(9000).get('[data-testid="no-notes-message"]').should('be.visible');
 }
 }
 

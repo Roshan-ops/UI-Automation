@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-09T15:24:01.843Z",
+    "end": "2025-07-09T15:25:10.540Z",
+    "duration": 68697,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "330d0e3d-2d7c-48c6-a485-36089bc8cc16",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\signup.cy.js",
+      "file": "cypress\\e2e\\smoke\\signup.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "00db2eba-d7dd-44d7-965c-a55cf8d40036",
+          "title": "Sign Up Flow - Smoke",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can sign up successfully",
+              "fullTitle": "Sign Up Flow - Smoke User can sign up successfully",
+              "timedOut": null,
+              "duration": 68541,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const timestamp = Date.now();\nconst email = `testuser+${timestamp}@example.com`;\nsignupPage.visit('/notes/ap');\nsignupPage.fillForm('Test User', email, 'password123', 'password123');\nsignupPage.submit();\ncy.wait(15000); // Wait for the signup process to complete\n// cy.get('b').should('be.visible'); \n// Click \"Click here to login\"\nsignupPage.clickHereToLogin();\n// Assertion to check login page is visible\ncy.get('[data-testid=\"login-email\"]').should('be.visible');",
+              "err": {},
+              "uuid": "90bd77d4-e331-4149-b981-207629a99788",
+              "parentUUID": "00db2eba-d7dd-44d7-965c-a55cf8d40036",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "90bd77d4-e331-4149-b981-207629a99788"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 68541,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

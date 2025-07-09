@@ -15,7 +15,7 @@ class SignupPage {
     cy.get('[data-testid="register-submit"]').click();
   }
   clickHereToLogin() {
-    cy.get('[data-testid="login-view"]').click();
+    cy.wait(15000).get('[data-testid="login-view"]').click();
   }
 }
 
