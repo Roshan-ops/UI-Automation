@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-07-09T15:22:04.860Z",
-    "end": "2025-07-09T15:22:43.186Z",
-    "duration": 38326,
+    "start": "2025-07-10T06:03:49.878Z",
+    "end": "2025-07-10T06:04:17.071Z",
+    "duration": 27193,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c89d4c45-6ef0-4ff3-a7c4-5921c60fc18c",
+      "uuid": "93d1d560-a148-4755-8110-9dc5fc8e0699",
       "title": "",
       "fullFile": "cypress\\e2e\\smoke\\login.cy.js",
       "file": "cypress\\e2e\\smoke\\login.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "22a4b3e9-47b2-4770-9ee9-7b05fd731cfd",
+          "uuid": "81e0a0cd-8c49-4b72-a9e4-224f7ac02f99",
           "title": "Login Flow - Smoke",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "User can log in successfully",
               "fullTitle": "Login Flow - Smoke User can log in successfully",
               "timedOut": null,
-              "duration": 38215,
+              "duration": 27065,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const email = 'test34@yopmail.com';\nconst password = 'password123';\nloginPage.visit();\nloginPage.fillForm(email, password);\nloginPage.submit();\ncy.wait(15000);\ncy.get('[data-testid=\"home\"]').should('be.visible');",
               "err": {},
-              "uuid": "8d4e6880-c6d1-4ab0-88d9-8eaf0c7e09c9",
-              "parentUUID": "22a4b3e9-47b2-4770-9ee9-7b05fd731cfd",
+              "uuid": "3d4707d5-0b55-49bb-8eec-c699df75a40f",
+              "parentUUID": "81e0a0cd-8c49-4b72-a9e4-224f7ac02f99",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "8d4e6880-c6d1-4ab0-88d9-8eaf0c7e09c9"
+            "3d4707d5-0b55-49bb-8eec-c699df75a40f"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 38215,
+          "duration": 27065,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
